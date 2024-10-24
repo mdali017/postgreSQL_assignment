@@ -57,4 +57,52 @@ OFFSET: The OFFSET clause is used to skip a specified number of rows before star
 the query. It's commonly used in combination with LIMIT for pagination purposes.
  
 
+### Question-7: How can you perform data modification using UPDATE statements?
 
+Answere: The UPDATE statement specifies the row or rows I want to changed, and the expressions to be used
+as the new values for specific columns in those rows. I can update statement to change single rows, 
+groups of rows, or all the rows in a table.
+
+*** Systex: 
+UPDATE table_name
+   SET 
+       column1 = value1,
+       column2 = value2
+   WHERE condition;
+
+**** Example: 
+UPDATE employees
+SET salary = salary * 1.10  -- Increase salary by 10%
+WHERE department = 'Sales';
+
+
+### Question-8: What is the significance of the JOIN operation, and how does it work in PostgreSQL?
+
+Answere: The JOIN operation in SQL, including PostgreSQL, is used to combine rows from two or more tables
+based on a related column between them. The JOIN operation is crucial for working with relational databases
+because data is often normalized and stored in multiple related tables.
+
+
+### Question-9: Explain the GROUP BY clause and its role in aggregation operations. 
+
+Answere: The GROUP BY clause in SQL is used to group rows that have the same values in specified 
+columns into summary rows, typically used with aggregate functions (like COUNT(), SUM(), AVG(), etc.). 
+It allows you to perform calculations on groups of data instead of individual rows. It perfomes data
+based on one or more columns.
+
+*** Example: 
+SELECT customer_id, SUM(sales_amount)
+FROM orders
+GROUP BY customer_id;
+
+### Question-10: How can you calculate aggregate functions like COUNT, SUM, and AVG in PostgreSQL?
+
+Answere: 
+* COUNT: Counts the number of rows.
+  command: SELECT count FROM table_name
+
+* SUM: Adds up the values in a column.
+  command: SELECT sum(column_name) FROM table_name
+
+* AVG: Calculate the average value of a column
+  command: SELECT avg(column_name) FROM table_name 
